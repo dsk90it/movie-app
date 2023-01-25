@@ -1,2 +1,1 @@
-# movie-app
-React Movie App
+# React Movie App
