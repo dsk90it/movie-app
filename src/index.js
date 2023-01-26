@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './styles/default.css'
+import './styles/defaults.css'
 import Discover from './pages/Discover'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
