@@ -1,0 +1,13 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+}
