@@ -1,5 +1,5 @@
-function Dashboard() {
-  return <div>Dashboard</div>
+function Discover() {
+  return <div>Discover Page...</div>
 }
 
-export default Dashboard
+export default Discover
