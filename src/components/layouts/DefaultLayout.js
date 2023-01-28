@@ -1,18 +1,15 @@
 import { ThemeProvider } from '@mui/material/styles'
-import { Box } from '@mui/system'
 import CssBaseline from '@mui/material/CssBaseline'
 
 import { dark } from '../../styles/theme'
-import BaseAvatar from '../base/BaseAvatar'
+import Sidebar from '../composites/SideBar/SideBar'
 
 function DefaultLayout({ children }) {
   return (
     <ThemeProvider theme={dark}>
       <CssBaseline />
 
-      <Box component="aside" sx={{ p: 5 }}>
-        <BaseAvatar />
-      </Box>
+      <Sidebar />
 
       <main>{children}</main>
     </ThemeProvider>

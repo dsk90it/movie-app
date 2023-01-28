@@ -7,7 +7,7 @@ function BaseAvatar(props) {
   return (
     <Avatar
       alt={props.name}
-      src={props.imgUrl}
+      src={props.imgurl}
       sx={{
         height: '91px',
         width: '91px',
@@ -17,14 +17,14 @@ function BaseAvatar(props) {
       }}
       {...props}
     >
-      {!props.imgUrl ? getInitials(props.name) : null}
+      {!props.imgurl ? getInitials(props.name) : null}
     </Avatar>
   )
 }
 
 BaseAvatar.defaultProps = {
   name: 'John Doe',
-  imgUrl: 'https://mui.com/static/images/avatar/1.jpg',
+  imgurl: 'https://mui.com/static/images/avatar/1.jpg',
 }
 
 export default BaseAvatar
