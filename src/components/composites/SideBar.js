@@ -1,11 +1,13 @@
-import { Box, Drawer, Typography } from '@mui/material'
+import { Box, Drawer, Typography, List } from '@mui/material'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined'
 import { useTheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import { styled } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
-import BaseAvatar from '../../base/BaseAvatar'
-import SideBarMenus from './SideBarMenus'
-import Menus from '../../../static/data/menus'
+import BaseAvatar from '../base/BaseAvatar'
+import BaseMenuItem from '../base/BaseMenuItem'
+import Menus from '../../static/data/menus'
 
 const drawerWidth = '275px'
 
@@ -30,6 +32,11 @@ const AppDrawer = styled(Drawer)(({ theme }) => ({
     borderRadius: '8px',
     backgroundColor: theme.palette.divider,
   },
+}))
+
+const MenuWrapper = styled(List)(({ theme }) => ({
+  borderTop: `1px solid ${theme.palette.divider}`,
+  padding: '16px 0',
 }))
 
 function BaseSidebar() {
@@ -59,7 +66,34 @@ function BaseSidebar() {
       </Box>
 
       {/* Menus */}
-      <SideBarMenus lists={Menus} />
+      {Menus.map((list) => (
+        <MenuWrapper key={list.id}>
+          {list.items.map((item) => (
+            <BaseMenuItem
+              key={item.id}
+              icon={item.icon}
+              text={item.text}
+              link={item.slug}
+              isSelected={item.active} // Todo: Route handling active state
+            />
+          ))}
+        </MenuWrapper>
+      ))}
+
+      {/* Account Settings */}
+      <MenuWrapper>
+        <BaseMenuItem
+          icon={<SettingsOutlinedIcon />}
+          text={'Settings'}
+          link="#"
+          isSelected={false} // Todo: Route handling active state
+        />
+        <BaseMenuItem
+          icon={<LogoutOutlinedIcon />}
+          text={'Logout'}
+          handleClick={() => alert('hi')}
+        />
+      </MenuWrapper>
     </AppDrawer>
   )
 }

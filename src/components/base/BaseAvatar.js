@@ -17,7 +17,7 @@ function BaseAvatar(props) {
       }}
       {...props}
     >
-      {!props.imgurl ? getInitials(props.name) : null}
+      {getInitials(props.name)}
     </Avatar>
   )
 }

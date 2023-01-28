@@ -2,7 +2,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 
 import { dark } from '../../styles/theme'
-import Sidebar from '../composites/SideBar/SideBar'
+import Sidebar from '../composites/SideBar'
 
 function DefaultLayout({ children }) {
   return (

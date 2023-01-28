@@ -4,8 +4,6 @@ import ListIcon from '@mui/icons-material/List'
 import LiveTvIcon from '@mui/icons-material/LiveTv'
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
-import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined'
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlined'
 
 const Menus = [
@@ -60,24 +58,6 @@ const Menus = [
         id: 7,
         text: 'Recomended',
         icon: <FavoriteBorderIcon />,
-        slug: '#',
-      },
-    ],
-  },
-  {
-    id: 'menu-group-3',
-    category: 'Account Routes',
-    items: [
-      {
-        id: 8,
-        text: 'Settings',
-        icon: <SettingsOutlinedIcon />,
-        slug: '#',
-      },
-      {
-        id: 9,
-        text: 'Logout',
-        icon: <LogoutOutlinedIcon />,
         slug: '#',
       },
     ],

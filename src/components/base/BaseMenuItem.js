@@ -12,6 +12,9 @@ const MenuItem = styled(ListItemButton)(({ theme }) => ({
   color: theme.palette.text.primary,
   borderRight: '3px solid transparent',
   margin: '2px 0',
+  fontSize: '1rem',
+  lineHeight: '1.5',
+  fontFamily: theme.typography.fontFamily,
 
   '.MuiListItemIcon-root': {
     minWidth: '42px',
@@ -33,10 +36,15 @@ const MenuItem = styled(ListItemButton)(({ theme }) => ({
   },
 }))
 
-function BaseMenuItem({ icon, text, link, isSelected }) {
+function BaseMenuItem({ icon, text, link, isSelected, handleClick }) {
   return (
     <ListItem disablePadding>
-      <MenuItem component="a" href={link} selected={isSelected}>
+      <MenuItem
+        component={link ? 'a' : 'button'}
+        href={link}
+        selected={isSelected}
+        onClick={handleClick}
+      >
         {icon && <ListItemIcon>{icon}</ListItemIcon>}
         <ListItemText
           primary={text}
@@ -50,9 +58,8 @@ function BaseMenuItem({ icon, text, link, isSelected }) {
 
 BaseMenuItem.defaultProps = {
   text: `Menu Item`,
-  link: '#',
   isSelected: false,
-  icon: null,
+  href: null,
 }
 
 export default BaseMenuItem
