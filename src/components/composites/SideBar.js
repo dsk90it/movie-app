@@ -39,7 +39,7 @@ const MenuWrapper = styled(List)(({ theme }) => ({
   padding: '16px 0',
 }))
 
-function BaseSidebar() {
+function BaseSidebar({ avatarImg, userName, onLogout }) {
   const theme = useTheme()
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'))
 
@@ -59,9 +59,9 @@ function BaseSidebar() {
         px={3}
         mb={2.5}
       >
-        <BaseAvatar name={'Eric Hoffman'} />
+        <BaseAvatar imgurl={avatarImg} name={userName} />
         <Typography mt={1.5} variant="h6">
-          Eric Hoffman
+          {userName}
         </Typography>
       </Box>
 
@@ -91,7 +91,7 @@ function BaseSidebar() {
         <BaseMenuItem
           icon={<LogoutOutlinedIcon />}
           text={'Logout'}
-          handleClick={() => alert('hi')}
+          handleClick={onLogout}
         />
       </MenuWrapper>
     </AppDrawer>

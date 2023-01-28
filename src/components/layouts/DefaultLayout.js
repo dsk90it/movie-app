@@ -9,7 +9,11 @@ function DefaultLayout({ children }) {
     <ThemeProvider theme={dark}>
       <CssBaseline />
 
-      <Sidebar />
+      <Sidebar
+        avatarImg={'https://mui.com/static/images/avatar/1.jpg'}
+        userName="Eric Hoffman"
+        onLogout={() => alert('Logout Clicked!')}
+      />
 
       <main>{children}</main>
     </ThemeProvider>

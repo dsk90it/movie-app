@@ -24,7 +24,6 @@ function BaseAvatar(props) {
 
 BaseAvatar.defaultProps = {
   name: 'John Doe',
-  imgurl: 'https://mui.com/static/images/avatar/1.jpg',
 }
 
 export default BaseAvatar
