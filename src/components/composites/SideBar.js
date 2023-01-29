@@ -109,7 +109,7 @@ function BaseSidebar({
           <BaseMenuItem
             icon={<SettingsOutlinedIcon />}
             text={'Settings'}
-            link="/"
+            link="#"
             isSelected={false} // Todo: Route handling active state
           />
           <BaseMenuItem

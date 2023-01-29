@@ -1,14 +1,24 @@
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material'
+import { AppBar, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
+import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 import { styled } from '@mui/material/styles'
 
 const AppHeader = styled(AppBar)(({ theme }) => ({
   margin: '-24px -24px 0 -24px',
   width: 'auto',
-  justifyContent: 'center',
+  flexDirection: 'row',
+  boxShadow: 'none',
+  backgroundColor: theme.palette.background.default,
+  color: 'inherit',
+  minHeight: '64px',
 
-  [theme.breakpoints.up('md')]: {
-    backgroundColor: 'red',
+  [theme.breakpoints.up('lg')]: {
+    backgrounColor: 'red',
+    margin: '-42px -48px 0 -48px',
+    padding: '24px 24px 0',
+    minHeight: 'auto',
   },
 }))
 
@@ -26,9 +36,21 @@ function BaseHeader({ openMenu }) {
           <MenuIcon />
         </IconButton>
 
-        <Typography variant="h6" noWrap>
-          BaseHeader
-        </Typography>
+        <div>
+          <IconButton color="inherit">
+            <SearchOutlinedIcon />
+          </IconButton>
+          <input />
+        </div>
+      </Toolbar>
+
+      <Toolbar sx={{ ml: 'auto' }}>
+        <IconButton color="inherit">
+          <LightModeOutlinedIcon />
+        </IconButton>
+        <IconButton color="inherit">
+          <MoreVertOutlinedIcon />
+        </IconButton>
       </Toolbar>
     </AppHeader>
   )

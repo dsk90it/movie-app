@@ -10,7 +10,11 @@ import Sidebar from '../composites/SideBar'
 
 const MainWrapper = styled(Box)(({ theme }) => ({
   flexGrow: 1,
-  padding: theme.spacing(3),
+  padding: '24px',
+
+  [theme.breakpoints.up('lg')]: {
+    padding: '42px 48px',
+  },
 }))
 
 function DefaultLayout({ children }) {
