@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Box, Drawer, Typography, List, IconButton } from '@mui/material'
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined'
@@ -48,8 +47,13 @@ const XsCloseIcon = styled(IconButton)(() => ({
   color: 'inherit',
 }))
 
-function BaseSidebar({ avatarImg, userName, onLogout }) {
-  const [isMenuOpen, setMenuOpen] = useState(false)
+function BaseSidebar({
+  avatarImg,
+  userName,
+  onLogout,
+  closeMenu,
+  isMenuOpen = false,
+}) {
   const theme = useTheme()
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'))
 
@@ -59,13 +63,13 @@ function BaseSidebar({ avatarImg, userName, onLogout }) {
         variant={isMdUp ? 'permanent' : 'temporary'}
         anchor="left"
         open={isMenuOpen}
-        onClose={() => setMenuOpen(false)}
+        onClose={closeMenu}
       >
         {/* xs close icon */}
         <XsCloseIcon
           aria-label="close menu"
           sx={{ display: { xs: 'block', md: 'none' } }}
-          onClick={() => setMenuOpen(false)}
+          onClick={closeMenu}
         >
           <CloseIcon />
         </XsCloseIcon>

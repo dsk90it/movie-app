@@ -1,11 +1,23 @@
+import { useState } from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import { Box } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
 import { dark } from '../../styles/theme'
+import BaseHeader from '../base/BaseHeader'
 import Sidebar from '../composites/SideBar'
-import { AppBar, Box } from '@mui/material'
+
+const MainWrapper = styled(Box)(({ theme }) => ({
+  flexGrow: 1,
+  padding: theme.spacing(3),
+}))
 
 function DefaultLayout({ children }) {
+  const [isMenuOpen, setMenuOpen] = useState(false)
+  const hideMenu = () => setMenuOpen(false)
+  const showMenu = () => setMenuOpen(true)
+
   return (
     <ThemeProvider theme={dark}>
       <Box sx={{ display: 'flex' }}>
@@ -15,12 +27,14 @@ function DefaultLayout({ children }) {
           avatarImg={'https://mui.com/static/images/avatar/1.jpg'}
           userName="Eric Hoffman"
           onLogout={() => alert('Logout Clicked!')}
+          closeMenu={hideMenu}
+          isMenuOpen={isMenuOpen}
         />
 
-        <Box component={'main'} sx={{ width: '100%' }}>
-          <AppBar position="sticky">lorem</AppBar>
+        <MainWrapper component={'main'}>
+          <BaseHeader openMenu={showMenu} />
           {children}
-        </Box>
+        </MainWrapper>
       </Box>
     </ThemeProvider>
   )
