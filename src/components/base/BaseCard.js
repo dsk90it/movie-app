@@ -10,15 +10,17 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 
 const MovieCard = styled(Card)(({ theme }) => ({
-  padding: '12px',
+  padding: '9px',
   borderRadius: '11px',
   boxShadow: 'none',
   backgroundColor: theme.palette.secondary.light,
   cursor: 'pointer',
   userSelect: 'none',
+  border: '3px solid transparent',
 
-  '&:selected': {
-    outline: '2px solid blue',
+  '&.selected': {
+    borderColor: '#00E0FF',
+    boxShadow: '0px 0px 20px 5px rgba(0, 0, 0, 0.35)',
   },
 
   '& .MuiCardMedia-img': {
@@ -34,7 +36,7 @@ const MovieCard = styled(Card)(({ theme }) => ({
 
 function BaseCard({ imgUrl, title }) {
   return (
-    <MovieCard>
+    <MovieCard className="selected">
       <CardMedia
         component="img"
         image="https://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg"
