@@ -21,18 +21,14 @@ const MenuItem = styled(ListItemButton)(({ theme }) => ({
     color: theme.palette.text.primary,
   },
 
-  // hover state
-  '&.MuiListItemButton-root:hover, &.Mui-selected': {
+  // selected state
+  '&.Mui-selected': {
     backgroundColor: 'transparent',
+    borderRightColor: theme.palette.primary.main,
 
     '&, & .MuiListItemIcon-root': {
       color: theme.palette.primary.main,
     },
-  },
-
-  // selected state
-  '&.Mui-selected': {
-    borderRightColor: theme.palette.primary.main,
   },
 }))
 
