@@ -8,7 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
 import BaseAvatar from '../base/BaseAvatar'
 import BaseMenuItem from '../base/BaseMenuItem'
-import Menus from '../../static/data/menus'
+import Menus from '../../static/menus'
 
 const drawerWidth = '275px'
 

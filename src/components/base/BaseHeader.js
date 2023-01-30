@@ -30,7 +30,7 @@ const SearchWrapper = styled(Paper)(({ theme }) => ({
   backgroundColor: 'transparent',
   transition: 'all 0.3s',
   borderRadius: '8px',
-  width: '40px',
+  width: '48px',
   overflow: 'hidden',
 
   [theme.breakpoints.down('sm')]: {
@@ -55,6 +55,19 @@ const SearchWrapper = styled(Paper)(({ theme }) => ({
     },
     [theme.breakpoints.up('lg')]: {
       width: '564px',
+    },
+  },
+
+  // search input
+  '.MuiInputBase-input': {
+    color: theme.palette.common.white,
+    fontWeight: theme.typography.fontWeightMedium,
+    fontSize: '20px',
+    lineHeight: '1',
+
+    '&::placeholder': {
+      color: theme.palette.text.primary,
+      fontWeight: theme.typography.fontWeightRegular,
     },
   },
 }))
@@ -94,11 +107,11 @@ function BaseHeader({ openMenu }) {
             color="inherit"
             sx={{ pointerEvents: isSearchOpen && 'none' }}
             onClick={openSearch}
-            disableRipple="true"
           >
             <SearchOutlinedIcon />
           </IconButton>
           <InputBase
+            tabIndex={-1}
             inputProps={{ 'aria-label': 'search movies' }}
             inputRef={searchRef}
             placeholder="Title, Movies, Keyword"
@@ -109,7 +122,6 @@ function BaseHeader({ openMenu }) {
             color="inherit"
             sx={{ opacity: isSearchOpen ? '1' : '0' }}
             onClick={closeSearch}
-            disableRipple="true"
           >
             <CloseIcon />
           </IconButton>
