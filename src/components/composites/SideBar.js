@@ -27,7 +27,7 @@ const AppDrawer = styled(Drawer)(({ theme }) => ({
     width: '8px',
   },
   '&& ::-webkit-scrollbar-track': {
-    backgroundColor: theme.palette.secondary.dark,
+    backgroundColor: theme.palette.secondary.medium,
   },
   '&& ::-webkit-scrollbar-thumb': {
     borderRadius: '8px',

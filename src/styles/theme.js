@@ -14,7 +14,8 @@ const dark = createTheme({
     secondary: {
       main: '#1F2A3C',
       light: '#394B61',
-      dark: '#283647',
+      medium: '#283647',
+      dark: '#1A2536',
     },
     divider: '#394B61',
   },
