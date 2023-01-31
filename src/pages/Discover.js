@@ -1,10 +1,10 @@
 import { Box } from '@mui/material'
-import BaseCard from '../components/base/BaseCard'
+import BaseRating from '../components/base/BaseRating'
 
 function Discover() {
   return (
-    <Box sx={{ maxWidth: 178 }}>
-      <BaseCard />
+    <Box sx={{ maxWidth: 200 }}>
+      <BaseRating value={8.3} />
     </Box>
   )
 }
