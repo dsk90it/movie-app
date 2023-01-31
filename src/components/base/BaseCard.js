@@ -1,4 +1,5 @@
 import {
+  Box,
   Card,
   CardActions,
   CardMedia,
@@ -19,7 +20,7 @@ const MovieCard = styled(Card)(({ theme }) => ({
   border: '3px solid transparent',
 
   '&.selected': {
-    borderColor: '#00E0FF',
+    borderColor: theme.palette.primary.main,
     boxShadow: '0px 0px 20px 5px rgba(0, 0, 0, 0.35)',
   },
 
@@ -34,33 +35,35 @@ const MovieCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-function BaseCard({ imgUrl, title }) {
-  return (
-    <MovieCard className="selected">
-      <CardMedia
-        component="img"
-        image="https://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg"
-        alt={title}
-        height={190}
-      />
+const FallbackImage = styled(Box)(({ theme }) => ({
+  display: 'block',
+  height: '190px',
+  backgroundColor: theme.palette.secondary.medium,
+  borderRadius: '8px',
+}))
 
-      <Typography sx={{ pt: '12px' }} fontWeight={'fontWeightMedium'} noWrap>
-        Free Guy Free Guy Free Guy Free Guy
+function BaseCard({ imgUrl, title, handlePlay, handlePlayList, isActive }) {
+  return (
+    <MovieCard className={isActive && 'selected'}>
+      {imgUrl ? (
+        <CardMedia component="img" image={imgUrl} alt={title} height={190} />
+      ) : (
+        <FallbackImage />
+      )}
+
+      <Typography sx={{ pt: '12px' }} fontWeight="fontWeightMedium">
+        {title}
       </Typography>
 
       <CardActions disableSpacing>
-        <IconButton
-          aria-label="play"
-          color="inherit"
-          onClick={() => alert('PlayIcon Clicked!')}
-        >
+        <IconButton aria-label="play" color="inherit" onClick={handlePlay}>
           <PlayCircleOutlineIcon />
         </IconButton>
         <IconButton
           aria-label="add to playlist"
           color="inherit"
           sx={{ ml: '-4px' }}
-          onClick={() => alert('PlayListIcon Clicked!')}
+          onClick={handlePlayList}
         >
           <AddCircleOutlineIcon />
         </IconButton>

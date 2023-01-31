@@ -30,7 +30,7 @@ function DefaultLayout({ children }) {
         <Sidebar
           avatarImg={'https://mui.com/static/images/avatar/1.jpg'}
           userName="Eric Hoffman"
-          onLogout={() => alert('Logout Clicked!')}
+          onLogout={() => console.log('Logout Clicked!')}
           closeMenu={hideMenu}
           isMenuOpen={isMenuOpen}
         />
