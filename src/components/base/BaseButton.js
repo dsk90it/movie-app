@@ -6,9 +6,14 @@ const AppButton = styled(Button)(({ theme }) => ({
   borderRadius: '0.3125rem',
   boxShadow: 'none',
   textTransform: 'unset',
+  fontWeight: '700',
 
   '&.MuiButton-outlined': {
     borderColor: theme.palette.primary.main,
+  },
+
+  '&.MuiButton-containedPrimary:hover': {
+    backgroundColor: theme.palette.primary.main,
   },
 
   '&:hover': {

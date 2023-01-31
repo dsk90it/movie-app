@@ -55,12 +55,12 @@ function BaseSidebar({
   isMenuOpen = false,
 }) {
   const theme = useTheme()
-  const isMdUp = useMediaQuery(theme.breakpoints.up('md'))
+  const isLgUp = useMediaQuery(theme.breakpoints.up('lg'))
 
   return (
     <Box component={'aside'} sx={{ flexShrink: 0 }}>
       <AppDrawer
-        variant={isMdUp ? 'permanent' : 'temporary'}
+        variant={isLgUp ? 'permanent' : 'temporary'}
         anchor="left"
         open={isMenuOpen}
         onClose={closeMenu}
@@ -68,7 +68,7 @@ function BaseSidebar({
         {/* xs close icon */}
         <XsCloseIcon
           aria-label="close menu"
-          sx={{ display: { xs: 'block', md: 'none' } }}
+          sx={{ display: { xs: 'block', lg: 'none' } }}
           onClick={closeMenu}
         >
           <CloseIcon />

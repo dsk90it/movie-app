@@ -95,7 +95,7 @@ function BaseHeader({ openMenu }) {
           aria-label="open drawer"
           edge="start"
           onClick={openMenu}
-          sx={{ display: { xs: 'flex', md: 'none' } }}
+          sx={{ display: { xs: 'flex', lg: 'none' } }}
         >
           <MenuIcon />
         </IconButton>
