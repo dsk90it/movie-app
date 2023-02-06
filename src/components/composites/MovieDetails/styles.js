@@ -1,4 +1,11 @@
-import { Stack, CardMedia, Box, List, IconButton } from '@mui/material'
+import {
+  Stack,
+  CardMedia,
+  Box,
+  List,
+  IconButton,
+  Skeleton,
+} from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 const DetailsWrapper = styled(Stack)(({ theme }) => ({
@@ -37,10 +44,10 @@ const MoviePoster = styled(CardMedia)(({ theme }) => ({
   },
 }))
 
-const FallbackImage = styled(Box)(({ theme }) => ({
+const FallbackImage = styled(Skeleton)(({ theme }) => ({
   width: '240px',
   height: '320px',
-  backgroundColor: theme.palette.secondary.medium,
+  //backgroundColor: theme.palette.secondary.medium,
 
   [theme.breakpoints.down('md')]: {
     borderRadius: '11px',

@@ -1,9 +1,9 @@
 import {
-  Box,
   Card,
   CardActions,
   CardMedia,
   IconButton,
+  Skeleton,
   Typography,
 } from '@mui/material'
 import { styled } from '@mui/material/styles'
@@ -35,20 +35,18 @@ const MovieCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-const FallbackImage = styled(Box)(({ theme }) => ({
-  display: 'block',
-  height: '190px',
-  backgroundColor: theme.palette.secondary.medium,
-  borderRadius: '8px',
-}))
-
 function BaseCard({ imgUrl, title, handlePlay, handlePlayList, isActive }) {
   return (
     <MovieCard className={isActive && 'selected'}>
       {imgUrl ? (
         <CardMedia component="img" image={imgUrl} alt={title} height={190} />
       ) : (
-        <FallbackImage />
+        <Skeleton
+          variant="rectangular"
+          width="100%"
+          height={190}
+          sx={{ borderRadius: '8px' }}
+        />
       )}
 
       <Typography sx={{ pt: '12px' }} fontWeight="fontWeightMedium">

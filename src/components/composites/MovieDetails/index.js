@@ -31,7 +31,11 @@ function MovieDetails({ movie, playMovie, playTrailer, closePopup }) {
         <CancelIcon />
       </XsCloseIcon>
 
-      {movie.Poster ? <MoviePoster image={movie.Poster} /> : <FallbackImage />}
+      {movie.Poster ? (
+        <MoviePoster image={movie.Poster} />
+      ) : (
+        <FallbackImage variant="rectangular" />
+      )}
 
       <Box sx={{ width: { xs: '100%', md: '70%' }, py: 3, px: { md: 4 } }}>
         <Typography sx={{ fontSize: '30px', fontWeight: 'fontWeightMedium' }}>
