@@ -17,7 +17,7 @@ const MainWrapper = styled(Box)(({ theme }) => ({
   },
 }))
 
-function DefaultLayout({ children }) {
+function DefaultLayout({ children, handleSearch }) {
   const [isMenuOpen, setMenuOpen] = useState(false)
   const hideMenu = () => setMenuOpen(false)
   const showMenu = () => setMenuOpen(true)
@@ -36,7 +36,7 @@ function DefaultLayout({ children }) {
         />
 
         <MainWrapper component={'main'}>
-          <BaseHeader openMenu={showMenu} />
+          <BaseHeader openMenu={showMenu} onSearch={handleSearch} />
           {children}
         </MainWrapper>
       </Box>

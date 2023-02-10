@@ -8,8 +8,8 @@ export default function MovieGrids({ movies }) {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         {movies.map((movie, index) => (
-          <Grid item xs={12} sm={4} md={3} lg={2.4}>
-            <BaseCard key={index} imgUrl={movie.Poster} title={movie.Title} />
+          <Grid key={index} item xs={12} sm={4} md={3} lg={2.4}>
+            <BaseCard imgUrl={movie.Poster} title={movie.Title} />
           </Grid>
         ))}
       </Grid>

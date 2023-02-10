@@ -72,7 +72,7 @@ const SearchWrapper = styled(Paper)(({ theme }) => ({
   },
 }))
 
-function BaseHeader({ openMenu }) {
+function BaseHeader({ openMenu, onSearch }) {
   const [isSearchOpen, setSearchOpen] = useState(false)
   const searchRef = useRef()
 
@@ -116,6 +116,7 @@ function BaseHeader({ openMenu }) {
             inputRef={searchRef}
             placeholder="Title, Movies, Keyword"
             sx={{ mx: '1', flex: 1 }}
+            onChange={onSearch}
           />
           <IconButton
             aria-label="close search"
