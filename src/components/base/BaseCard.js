@@ -49,7 +49,7 @@ function BaseCard({ imgUrl, title, handlePlay, handlePlayList, isActive }) {
         />
       )}
 
-      <Typography sx={{ pt: '12px' }} fontWeight="fontWeightMedium">
+      <Typography sx={{ pt: '12px' }} fontWeight="fontWeightMedium" noWrap>
         {title}
       </Typography>
 

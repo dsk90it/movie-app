@@ -1,8 +1,8 @@
-import MovieDetails from '../components/composites/MovieDetails'
+import MovieGrids from '../components/composites/MovieGrids'
 import AllMovies from '../static/data.json'
 
 function Discover() {
-  return <MovieDetails movie={AllMovies[0]} />
+  return <MovieGrids movies={AllMovies} />
 }
 
 export default Discover
