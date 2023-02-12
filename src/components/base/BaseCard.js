@@ -35,9 +35,16 @@ const MovieCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-function BaseCard({ imgUrl, title, handlePlay, handlePlayList, isActive }) {
+function BaseCard({
+  imgUrl,
+  title,
+  isActive,
+  handlePlay,
+  handlePlayList,
+  handleClick,
+}) {
   return (
-    <MovieCard className={isActive && 'selected'}>
+    <MovieCard className={isActive && 'selected'} onClick={handleClick}>
       {imgUrl ? (
         <CardMedia image={imgUrl} alt={title} sx={{ pb: '118%' }} />
       ) : (

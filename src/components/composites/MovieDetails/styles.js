@@ -26,6 +26,7 @@ const DetailsWrapper = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     borderRadius: 11,
     overflow: 'hidden',
+    marginBottom: '28px',
   },
 }))
 

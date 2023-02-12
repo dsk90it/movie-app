@@ -13,7 +13,7 @@ function Discover() {
 
     if (keyword !== '') {
       const results = AllMovies.filter((movie) => {
-        return movie.Title.toLowerCase().startsWith(keyword.toLowerCase())
+        return movie.Title.toLowerCase().includes(keyword.toLowerCase())
       })
       setData(results)
     } else {
