@@ -24,7 +24,7 @@ const MovieCard = styled(Card)(({ theme }) => ({
     boxShadow: '0px 0px 20px 5px rgba(0, 0, 0, 0.35)',
   },
 
-  '& .MuiCardMedia-img': {
+  '& .MuiCardMedia-root': {
     borderRadius: '8px',
     objectPosition: 'top center',
   },
@@ -39,13 +39,12 @@ function BaseCard({ imgUrl, title, handlePlay, handlePlayList, isActive }) {
   return (
     <MovieCard className={isActive && 'selected'}>
       {imgUrl ? (
-        <CardMedia component="img" image={imgUrl} alt={title} height={190} />
+        <CardMedia image={imgUrl} alt={title} sx={{ pb: '118%' }} />
       ) : (
         <Skeleton
           variant="rectangular"
           width="100%"
-          height={190}
-          sx={{ borderRadius: '8px' }}
+          sx={{ borderRadius: '8px', pb: '118%' }}
         />
       )}
 
