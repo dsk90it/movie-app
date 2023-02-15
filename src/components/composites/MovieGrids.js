@@ -32,7 +32,7 @@ export default function MovieGrids({ movies }) {
 
       <Grid container spacing={2}>
         {movies.map((movie, index) => (
-          <Grid key={index} item xs={12} sm={3} lg={2.4}>
+          <Grid key={index} item xs={6} sm={3} lg={2.4}>
             <BaseCard
               imgUrl={movie.Poster}
               title={movie.Title}
