@@ -97,9 +97,11 @@ function MovieDetails({ movie, playMovie, playTrailer, closePopup }) {
               {movie.Title}
             </Typography>
 
-            <Box sx={{ display: 'block', maxWidth: 160 }}>
-              <BaseRating value={parseFloat(movie.imdbRating)} />
-            </Box>
+            {movie.imdbRating !== 'N/A' ? (
+              <Box sx={{ display: 'block', maxWidth: 160 }}>
+                <BaseRating value={parseFloat(movie.imdbRating)} />
+              </Box>
+            ) : null}
 
             <Box sx={{ display: 'block', width: '100%' }}>
               <CastList>
