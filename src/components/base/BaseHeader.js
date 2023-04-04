@@ -79,7 +79,6 @@ function BaseHeader({ openMenu, onSearch }) {
   const openSearch = () => {
     setSearchOpen(true)
     searchRef.current.focus()
-    console.log(searchRef)
   }
   const closeSearch = () => {
     setSearchOpen(false)
